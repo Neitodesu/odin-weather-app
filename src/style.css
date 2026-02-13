@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --grad-color1: #40c9ff;
+  --grad-color2: #9473ff;
+  --grad-color3: #e81cff;
+  --ff-header: 'Outfit';
+  --ff-text: 'Boldonse';
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background: linear-gradient(
+    135deg,
+    var(--grad-color1),
+    var(--grad-color2),
+    var(--grad-color3)
+  );
+  font-family: var(--ff-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  width: clamp(360px, 60%, 1200px);
+  height: 80%;
+  background: #fff2;
+  box-shadow: 0 0 2px #0001;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px #0006;
+  font-size: 3rem;
+  font-family: var(--ff-header);
+}
+
+input {
+  font-family: inherit;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  margin-bottom: 1rem;
+}
+
+.current-temp {
+  color: #fff;
+  font-size: 2rem;
+  font-family: var(--ff-text);
+}
+
+.current-condition {
+  width: 40px;
+}
