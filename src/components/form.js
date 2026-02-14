@@ -58,7 +58,6 @@ const displayHeader = (elem) => {
   header.classList.add('header');
 
   elem.appendChild(header);
-  elem.appendChild(currDate);
 };
 
 const displayWeatherInfo = (obj) => {
@@ -122,13 +121,11 @@ const renderForm = () => {
   displayHeader(app);
   const form = document.createElement('form');
   const cityInput = document.createElement('input');
-  const errSpan = document.createElement('span');
   const formSubmitBtn = document.createElement('button');
   cityInput.type = 'text';
   cityInput.setAttribute('placeholder', 'Enter Country, State, City, or ZIP');
   cityInput.classList.add('city-input');
   formSubmitBtn.textContent = 'See Weather';
-  errSpan.classList.add('error');
   statsContainer.classList.add('stats-container');
   form.appendChild(cityInput);
   form.appendChild(formSubmitBtn);
