@@ -31,12 +31,11 @@ const getWeather = async (city) => {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/?key=${apiKey}`,
     );
     const data = await response.json();
-    console.log(data);
     const setDate = parseISO(data.days[0].datetime);
-    const newDate = format(setDate, 'eeee');
+    const newDate = format(setDate, 'PP');
     const currentWeatherStats = new Weather(
-      data.days[0].conditions,
-      data.days[0].temp,
+      data.currentConditions.conditions,
+      data.currentConditions.temp,
       newDate,
       data.days[0].feelslike,
       data.days[0].humidity,
@@ -46,7 +45,7 @@ const getWeather = async (city) => {
     );
     displayWeatherInfo(currentWeatherStats);
   } catch (err) {
-    console.log(`Could not find location`);
+    console.log(err);
   }
 };
 
